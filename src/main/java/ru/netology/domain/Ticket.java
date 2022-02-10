@@ -10,6 +10,17 @@ public class Ticket implements Comparable<Ticket>{
     private String arrivalTerm;
     private int travelTime;
 
+    public Ticket() {
+    }
+
+    public Ticket(int id, int price, String departureTerm, String arrivalTerm, int travelTime) {
+        this.id = id;
+        this.price = price;
+        this.departureTerm = departureTerm;
+        this.arrivalTerm = arrivalTerm;
+        this.travelTime = travelTime;
+    }
+
 
     @Override
     public int compareTo(Ticket o) {
@@ -79,5 +90,9 @@ public class Ticket implements Comparable<Ticket>{
                 ", arrivalTerm='" + arrivalTerm + '\'' +
                 ", travelTime=" + travelTime +
                 '}';
+    }
+
+    public boolean matches(String from, String to) {
+        return departureTerm.equalsIgnoreCase(from) && arrivalTerm.equalsIgnoreCase(to);
     }
 }

@@ -5,7 +5,7 @@ import ru.netology.domain.Ticket;
 public class TicketRepository {
     private Ticket[] tkt = new Ticket[0];
 
-    public void add(Ticket ticket) {
+    public void save(Ticket ticket) {
         int length = tkt.length + 1;
         Ticket[] tmp = new Ticket[length];
         System.arraycopy(tkt, 0, tmp, 0, tkt.length);
