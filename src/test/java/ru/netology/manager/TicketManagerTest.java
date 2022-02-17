@@ -16,7 +16,7 @@ class TicketManagerTest {
 
     private Ticket first = new Ticket(1, 100, "LED", "VNU", 60);
     private Ticket second = new Ticket(2, 200, "BCN", "LED", 70);
-    private Ticket third = new Ticket(3, 300, "LED", "DME", 80);
+    private Ticket third = new Ticket(3, 150, "LED", "DME", 80);
     private Ticket fourth = new Ticket(4, 400, "VNU", "LED", 90);
     private Ticket fifth = new Ticket(5, 500, "SVO", "LED", 100);
     private Ticket sixth = new Ticket(6, 600, "LED", "BCN", 110);
@@ -41,10 +41,10 @@ class TicketManagerTest {
 
     @Test
     public void shouldPriceSort() {
-        Ticket[] expected = new Ticket[]{fourth, first, sixth, eighth, second, ninth, seventh, third, tenth, fifth};
+        Ticket[] expected = new Ticket[]{first, third, second, fourth, fifth, sixth, seventh, eighth, ninth, tenth};
         Ticket[] actual = repository.findAll();
         Arrays.sort(actual);
-        assertArrayEquals(actual, expected);
+        assertArrayEquals(expected,actual);
     }
 
     @Test
